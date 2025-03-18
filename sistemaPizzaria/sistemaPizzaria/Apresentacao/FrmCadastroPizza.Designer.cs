@@ -33,15 +33,19 @@
             txtNomePizza = new TextBox();
             txtPrecoPizza = new TextBox();
             lblTitle = new Label();
-            dataGridView1 = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            dtgPizza = new DataGridView();
+            lblID = new Label();
+            txtID = new TextBox();
+            btnSalvar = new Button();
+            btnExcluir = new Button();
+            ((System.ComponentModel.ISupportInitialize)dtgPizza).BeginInit();
             SuspendLayout();
             // 
             // lblNomePizza
             // 
             lblNomePizza.AutoSize = true;
             lblNomePizza.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNomePizza.Location = new Point(51, 96);
+            lblNomePizza.Location = new Point(51, 168);
             lblNomePizza.Name = "lblNomePizza";
             lblNomePizza.Size = new Size(116, 21);
             lblNomePizza.TabIndex = 0;
@@ -51,7 +55,7 @@
             // 
             lblPrecoPizza.AutoSize = true;
             lblPrecoPizza.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPrecoPizza.Location = new Point(51, 174);
+            lblPrecoPizza.Location = new Point(51, 246);
             lblPrecoPizza.Name = "lblPrecoPizza";
             lblPrecoPizza.Size = new Size(112, 21);
             lblPrecoPizza.TabIndex = 1;
@@ -61,7 +65,7 @@
             // 
             txtNomePizza.BackColor = SystemColors.Menu;
             txtNomePizza.ForeColor = Color.Gray;
-            txtNomePizza.Location = new Point(51, 123);
+            txtNomePizza.Location = new Point(51, 195);
             txtNomePizza.Name = "txtNomePizza";
             txtNomePizza.Size = new Size(263, 23);
             txtNomePizza.TabIndex = 2;
@@ -69,7 +73,7 @@
             // txtPrecoPizza
             // 
             txtPrecoPizza.BackColor = SystemColors.Menu;
-            txtPrecoPizza.Location = new Point(51, 200);
+            txtPrecoPizza.Location = new Point(51, 272);
             txtPrecoPizza.Name = "txtPrecoPizza";
             txtPrecoPizza.Size = new Size(263, 23);
             txtPrecoPizza.TabIndex = 3;
@@ -84,22 +88,66 @@
             lblTitle.TabIndex = 4;
             lblTitle.Text = "CADASTRO DE PIZZA";
             // 
-            // dataGridView1
+            // dtgPizza
             // 
-            dataGridView1.BackgroundColor = Color.DarkOliveGreen;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(335, 96);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(453, 342);
-            dataGridView1.TabIndex = 5;
+            dtgPizza.BackgroundColor = Color.DarkOliveGreen;
+            dtgPizza.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgPizza.Location = new Point(335, 96);
+            dtgPizza.Name = "dtgPizza";
+            dtgPizza.Size = new Size(453, 342);
+            dtgPizza.TabIndex = 5;
+            dtgPizza.CellContentClick += dtgPizza_CellContentClick;
+            // 
+            // lblID
+            // 
+            lblID.AutoSize = true;
+            lblID.Font = new Font("Segoe UI", 12F);
+            lblID.Location = new Point(51, 96);
+            lblID.Name = "lblID";
+            lblID.Size = new Size(28, 21);
+            lblID.TabIndex = 6;
+            lblID.Text = "ID:";
+            // 
+            // txtID
+            // 
+            txtID.BackColor = SystemColors.Menu;
+            txtID.ForeColor = SystemColors.ScrollBar;
+            txtID.Location = new Point(51, 120);
+            txtID.Name = "txtID";
+            txtID.Size = new Size(263, 23);
+            txtID.TabIndex = 7;
+            // 
+            // btnSalvar
+            // 
+            btnSalvar.Location = new Point(51, 386);
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.Size = new Size(75, 23);
+            btnSalvar.TabIndex = 8;
+            btnSalvar.Text = "SALVAR";
+            btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
+            // 
+            // btnExcluir
+            // 
+            btnExcluir.Location = new Point(239, 386);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(75, 23);
+            btnExcluir.TabIndex = 9;
+            btnExcluir.Text = "EXCLUIR";
+            btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // FrmCadastroPizza
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gainsboro;
-            ClientSize = new Size(800, 450);
-            Controls.Add(dataGridView1);
+            ClientSize = new Size(801, 450);
+            Controls.Add(btnExcluir);
+            Controls.Add(btnSalvar);
+            Controls.Add(txtID);
+            Controls.Add(lblID);
+            Controls.Add(dtgPizza);
             Controls.Add(lblTitle);
             Controls.Add(txtPrecoPizza);
             Controls.Add(txtNomePizza);
@@ -107,7 +155,8 @@
             Controls.Add(lblNomePizza);
             Name = "FrmCadastroPizza";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += FrmCadastroPizza_Load;
+            ((System.ComponentModel.ISupportInitialize)dtgPizza).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -119,6 +168,10 @@
         private TextBox txtNomePizza;
         private TextBox txtPrecoPizza;
         private Label lblTitle;
-        private DataGridView dataGridView1;
+        private DataGridView dtgPizza;
+        private Label lblID;
+        private TextBox txtID;
+        private Button btnSalvar;
+        private Button btnExcluir;
     }
 }

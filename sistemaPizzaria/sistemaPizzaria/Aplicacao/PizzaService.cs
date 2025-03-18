@@ -11,8 +11,6 @@ namespace sistemaPizzaria.Aplicacao
 {
     public class PizzaService
     {
-        
-
         private readonly PizzaRepository _repository;
         public PizzaService(PizzaRepository repository)
         {
@@ -40,11 +38,5 @@ namespace sistemaPizzaria.Aplicacao
         {
             return _repository.GetAll();
         }
-
-
-
-
-
-
     }
 }

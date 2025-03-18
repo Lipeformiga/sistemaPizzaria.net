@@ -129,7 +129,6 @@ C:\Users\filipe_formigari\Documents\GitHub\sistemaPizzaria.net\sistemaPizzaria\s
 C:\Users\filipe_formigari\Documents\GitHub\sistemaPizzaria.net\sistemaPizzaria\sistemaPizzaria\bin\Debug\net8.0-windows\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\filipe_formigari\Documents\GitHub\sistemaPizzaria.net\sistemaPizzaria\sistemaPizzaria\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\Users\filipe_formigari\Documents\GitHub\sistemaPizzaria.net\sistemaPizzaria\sistemaPizzaria\obj\Debug\net8.0-windows\sistemaPizzaria.csproj.AssemblyReference.cache
-C:\Users\filipe_formigari\Documents\GitHub\sistemaPizzaria.net\sistemaPizzaria\sistemaPizzaria\obj\Debug\net8.0-windows\sistemaPizzaria.Form1.resources
 C:\Users\filipe_formigari\Documents\GitHub\sistemaPizzaria.net\sistemaPizzaria\sistemaPizzaria\obj\Debug\net8.0-windows\sistemaPizzaria.csproj.GenerateResource.cache
 C:\Users\filipe_formigari\Documents\GitHub\sistemaPizzaria.net\sistemaPizzaria\sistemaPizzaria\obj\Debug\net8.0-windows\sistemaPizzaria.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\filipe_formigari\Documents\GitHub\sistemaPizzaria.net\sistemaPizzaria\sistemaPizzaria\obj\Debug\net8.0-windows\sistemaPizzaria.AssemblyInfoInputs.cache

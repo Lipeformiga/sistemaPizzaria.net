@@ -18,5 +18,9 @@ namespace sistemaPizzaria.Dominio.Entidades
             this.Nome = Nome;
             this.Preco = Preco;
         }
+        public Pizza()
+        {
+         
+        }
     }
 }

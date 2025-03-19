@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\sistemaPizzaria",
+    "\\sistemaPizzaria\\sistemaPizzaria",
+    "\\sistemaPizzaria\\sistemaPizzaria\\Dominio\\Entidades",
+    "\\sistemaPizzaria\\sistemaPizzaria\\Infraestrutura\\Database",
+    "\\sistemaPizzaria\\sistemaPizzaria\\Infraestrutura\\Migrations",
+    "\\sistemaPizzaria\\sistemaPizzaria\\Infraestrutura\\Repository"
+  ],
+  "SelectedNode": "\\sistemaPizzaria\\sistemaPizzaria.sln",
+  "PreviewInSolutionExplorer": false
+}

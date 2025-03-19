@@ -1,3 +1,4 @@
+using Microsoft.Extensions.DependencyInjection;
 using sistemaPizzaria.Aplicacao;
 using sistemaPizzaria.Dominio.Entidades;
 using sistemaPizzaria.Infraestrutura.Database;
@@ -8,59 +9,68 @@ namespace sistemaPizzaria
     public partial class FrmCadastroPizza : Form
     {
 
-        private PizzaService pizzaService;
+        private readonly IPizzaService _ipizzaService;  
 
-        public FrmCadastroPizza()
+        public FrmCadastroPizza(IServiceProvider serviceProvider)
         {
             InitializeComponent();
-            carregarPizza();
-            var context = new AppDbContext();
-            var repository = new PizzaRepository(context);
-            pizzaService = new PizzaService(repository);
+
+            _ipizzaService = serviceProvider.GetRequiredService<IPizzaService>();
         }
+            
+
+       
 
 
         private void salvarPizza()
         {
-            using var context = new AppDbContext();
-            int id;
-            bool idExiste = int.TryParse(txtID.Text, out id) && id > 0;
 
-            var pizza = idExiste ? context.Pizzas.Find(id) : new Pizza();
-
-            if (pizza == null)
+            if (string.IsNullOrEmpty(txtNomePizza.Text))
             {
-                MessageBox.Show("Produto não encontrado para atualização.");
+                MessageBox.Show("Nome da pizza é obrigatório.");
                 return;
             }
 
-            pizza.Nome = txtNomePizza.Text;
-            pizza.Preco = decimal.Parse(txtPrecoPizza.Text);
 
+            if (!decimal.TryParse(txtPrecoPizza.Text, out decimal preco) || preco <= 0)
+            {
+                MessageBox.Show("Preço inválido.");
+                return;
+            }
+            try
+            {
+                if (string.IsNullOrEmpty(txtID.Text))
+                {
+                    _ipizzaService.CadastrarPizza(txtNomePizza.Text, decimal.Parse(txtPrecoPizza.Text));
+                    MessageBox.Show("pizza salva com sucesso!");
+                    carregarPizza();
+                }
+                else
+                {
+                    _ipizzaService.AlterarPizza(int.Parse(txtID.Text), txtNomePizza.Text, decimal.Parse(txtPrecoPizza.Text));
+                    MessageBox.Show("pizza atualizada com sucesso!");
+                    carregarPizza();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao salvar a pizza: {ex.Message}");
+            }
 
-            if (!idExiste)
-            {
-                context.Pizzas.Add(pizza);
-                MessageBox.Show("Produto cadastrado com sucesso!");
-            }
-            else if (idExiste)
-            {
-                MessageBox.Show("Produto atualizado com sucesso!");
-            }
-            else
-            {
-                MessageBox.Show("Produto não encontrado");
-            }
-
-            context.SaveChanges();
         }
 
         private void carregarPizza()
         {
-            using var context = new AppDbContext();
-            var produtos = context.Pizzas.ToList();
-            dtgPizza.DataSource = produtos;
+            var pizzas = _ipizzaService.GetPizzas();
+
+            dtgPizza.DataSource = pizzas;
+
+            dtgPizza.Columns["Id"].HeaderText = "ID";
+            dtgPizza.Columns["Nome"].HeaderText = "Nome da Pizza";
+            dtgPizza.Columns["Preco"].HeaderText = "Preço";
         }
+
+  
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
@@ -80,23 +90,22 @@ namespace sistemaPizzaria
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            using var context = new AppDbContext();
-
-            int id = int.Parse(txtID.Text);
-            var pizza = context.Pizzas.Find(id);
-
-            if (pizza != null)
+            if (string.IsNullOrEmpty(txtID.Text) || !int.TryParse(txtID.Text, out int id))
             {
-                context.Pizzas.Remove(pizza);
-                context.SaveChanges();
-                MessageBox.Show("Pizza excluída com sucesso");
+                MessageBox.Show("Por favor, insira um ID válido.");
+                return;
             }
-            else
+           
+            try
             {
-                MessageBox.Show("Produto não encontrado");
+                _ipizzaService.ExcluirPizza(id);
+                MessageBox.Show("Produto excluido com sucesso");
+                carregarPizza();
             }
-            limparDados();
-            carregarPizza();
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao salvar o produto: {ex.Message}");
+            }
 
         }
 

@@ -10,7 +10,7 @@ using sistemaPizzaria.Infraestrutura.Database;
 namespace sistemaPizzaria.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250318225136_InitialCreate")]
+    [Migration("20250319000257_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

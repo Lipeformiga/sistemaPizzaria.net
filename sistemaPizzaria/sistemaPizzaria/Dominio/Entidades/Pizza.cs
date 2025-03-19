@@ -22,5 +22,11 @@ namespace sistemaPizzaria.Dominio.Entidades
         {
          
         }
+        public Pizza(int Id, string Nome, decimal Preco)
+        {
+            this.Id = Id;
+            this.Nome = Nome;
+            this.Preco = Preco;
+        }
     }
 }

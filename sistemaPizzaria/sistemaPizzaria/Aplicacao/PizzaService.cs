@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace sistemaPizzaria.Aplicacao
 {
-    public class PizzaService
+    public class PizzaService : IPizzaService
     {
-        private readonly PizzaRepository _repository;
-        public PizzaService(PizzaRepository repository)
+        private readonly IPizzaRepository _repository;
+        public PizzaService(IPizzaRepository repository)
         {
             _repository = repository;
         }

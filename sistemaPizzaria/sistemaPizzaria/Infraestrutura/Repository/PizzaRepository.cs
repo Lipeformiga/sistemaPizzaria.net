@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace sistemaPizzaria.Infraestrutura.Repository
 {
-    public class PizzaRepository
+    public class PizzaRepository : IPizzaRepository
     {
         private readonly AppDbContext _context;
 

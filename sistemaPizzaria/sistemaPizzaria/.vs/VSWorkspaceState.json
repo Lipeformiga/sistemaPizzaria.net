@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Aplicacao",
+    "\\Apresentacao",
+    "\\Dominio",
+    "\\Dominio\\Entidades",
+    "\\Infraestrutura",
+    "\\Infraestrutura\\Database",
+    "\\Infraestrutura\\Repository"
+  ],
+  "SelectedNode": "\\Infraestrutura\\Repository\\PizzaRepository.cs",
+  "PreviewInSolutionExplorer": false
+}

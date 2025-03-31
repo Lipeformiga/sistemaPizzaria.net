@@ -3,11 +3,8 @@
     "",
     "\\sistemaPizzaria",
     "\\sistemaPizzaria\\sistemaPizzaria",
-    "\\sistemaPizzaria\\sistemaPizzaria\\Dominio\\Entidades",
-    "\\sistemaPizzaria\\sistemaPizzaria\\Infraestrutura\\Database",
-    "\\sistemaPizzaria\\sistemaPizzaria\\Infraestrutura\\Migrations",
-    "\\sistemaPizzaria\\sistemaPizzaria\\Infraestrutura\\Repository"
+    "\\sistemaPizzaria\\sistemaPizzaria\\Apresentacao"
   ],
-  "SelectedNode": "\\sistemaPizzaria\\sistemaPizzaria.sln",
+  "SelectedNode": "\\sistemaPizzaria\\sistemaPizzaria\\Apresentacao\\FrmCadastroPizza.Designer.cs",
   "PreviewInSolutionExplorer": false
 }
